@@ -6,7 +6,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.OptimisticLockingFailureException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class IOUService {
 
     @Autowired
@@ -31,5 +33,9 @@ public class IOUService {
 
     public void deleteIOU(UUID id) {
         iouRepository.deleteById(id);
+    }
+
+    public List<IOU> getIOUsByBorrower(String borrower) {
+        return iouRepository.findByBorrower(borrower);
     }
 }
