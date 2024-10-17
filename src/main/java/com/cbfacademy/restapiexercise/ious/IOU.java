@@ -22,6 +22,10 @@ public class IOU {
     private BigDecimal amount;
     private Instant dateTime;
 
+    public IOU() {
+        // Default constructor
+    } 
+
     public IOU(String lender, String borrower, BigDecimal amount, Instant dateTime) {
         this.lender = lender;
         this.borrower =borrower;
